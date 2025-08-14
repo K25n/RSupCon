@@ -1,0 +1,29 @@
+#Our Environments
+# Python == 3.9.12
+# Pytorch == 1.13.0
+
+# For Train Encoder and Linear
+tensorboard_logger
+
+# For Evaluation
+
+torchmetrics==1.5.2
+
+# torchattacks
+# GitHub Repository: https://github.com/Harry24k/adversarial-attacks-pytorch
+torchattacks
+
+# robustbench  
+# GitHub Repository:  https://github.com/RobustBench/robustbench/tree/master
+git+https://github.com/RobustBench/robustbench.git
+
+# pytorchood == 0.1.6, need python >=3.9.x version
+# GitHub Repository: https://github.com/kkirchheim/pytorch-ood
+pytorch-ood
+
+pandas
+numpy
+
+# For Visualization
+scikit-learn
+matplotlib
