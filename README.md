@@ -11,9 +11,9 @@ Implements the encoder training described in our paper. This script includes sev
 - `--trans_order`  
   Specifies the order of augmentations to be applied.  
   Example: `--trans_order b0,s0,t0`  
-  - **b (Base Augment):** Small changes from original images, preserving human-perceived features and color information.  
-  - **s (Sim Augment):** Color distortion augmentations, producing images rich in shape features but containing many non-robust features.  
-  - **t (Trivial Augment):** Various augmentations affecting both robust and non-robust features.
+  - b : BaseAugment
+  - s : SimAugment
+  - t : TrivialAugment
 
 - `--atk_anchor`  
   Defines the set of images used as adversarial examples.  
@@ -32,23 +32,20 @@ Implements the encoder training described in our paper. This script includes sev
   Example: `--cln_anchor t0`
 
 #### Usage Examples
-1.
+1. Train encoder with three types of augmentations.
 ```
 --trans_order b0,s0,t0 --atk_anchor b0,s0 --atk_randstart b0 --atk_contrast b0,s0 --cln_anchor t0
 ```
-Train encoder with three types of augmentations.
 
-2.
+2. Another variant with three augmentation types.
 ```
 --trans_order b0,s0,t0 --atk_anchor s0,t0 --atk_contrast b0,s0 --cln_anchor b0
 ```
-Another variant with three augmentation types.
 
-3.
+3. Train encoder with a single augmentation method type.
 ```
 --trans_order s0,s1,s2 --atk_anchor s0,s1 --atk_contrast s0,s1 --cln_anchor s2
 ```
-Train encoder with a single augmentation method type.
 
 ### `main_linear.py`
 Trains a linear classifier with a pre-trained encoder.
